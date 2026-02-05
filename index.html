@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For My Valentine ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        font-family: "Poppins", sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        position: relative;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .buttons {
+        position: relative;
+        height: 120px;
+    }
+
+    button {
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #yes {
+        font-size: 26px;
+        padding: 18px 50px;
+        background: #ff4d6d;
+        color: white;
+        font-weight: bold;
+    }
+
+    #yes:hover {
+        transform: scale(1.1);
+    }
+
+    #no {
+        position: absolute;
+        font-size: 14px;
+        padding: 10px 22px;
+        background: #ccc;
+        color: #444;
+    }
+
+    .love {
+        margin-top: 30px;
+        font-size: 18px;
+        color: #ff4d6d;
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Will you be my Valentine? ❤️</h1>
+
+    <div class="buttons">
+        <button id="yes">YES 💕</button>
+        <button id="no">no</button>
+    </div>
+
+    <div class="love" id="message">
+        Yaaay! You just made me the happiest husband ever 🥹❤️
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const message = document.getElementById("message");
+
+function moveNo() {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 100);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+yesBtn.addEventListener("click", () => {
+    message.style.display = "block";
+    yesBtn.innerText = "I Love You ❤️";
+});
+</script>
+
+</body>
+</html>
